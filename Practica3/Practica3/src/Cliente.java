@@ -2,7 +2,7 @@
 
 public class Cliente {
     private final int entryTime;
-    private int startTime;
+    int startTime;
     private int exitTime;
     public Cliente(int entryTime, int exitTime)
     {
@@ -11,7 +11,6 @@ public class Cliente {
     }
     public int getEntryTime(){ return entryTime; }
     public int getExitTime(){ return exitTime; }
-    public int getWaitTime() { return startTime - entryTime; }
     public int getTotalTime()
     {
         return exitTime - entryTime;
@@ -21,8 +20,6 @@ public class Cliente {
         this.startTime = startTime;
         this.exitTime = startTime + 120;
     }
-    public void setExitTime(int exitTime){
-        this.exitTime = exitTime;}
 
 }
 
