@@ -1,5 +1,5 @@
 public class P9 {
-    public static void main(String[] args) {
+    public static void main() {
         Storage<Number> s1 = new Storage<>();//Guardem number
         s1.addItem(0);
         s1.addItem(1);
@@ -18,8 +18,6 @@ public class P9 {
         Sí que es pot. Un integer és "fill" de Number, per tant, podem dir que com un Integer és un Number, es pot fer la transformació.
         Provat al Main
          */
-
-
     }
 }
 
