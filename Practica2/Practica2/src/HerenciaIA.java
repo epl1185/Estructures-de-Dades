@@ -10,16 +10,14 @@ public static class Empleado {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Empleado)) return false;
-
-        Empleado empleado = (Empleado) o;
+        if (!(o instanceof Empleado empleado)) return false;
         return id == empleado.id; // Solo comparamos id
     }
 
     // ❌ Sin hashCode() por ahora - funciona pero no óptimo
 }
 
-class Gerente extends Empleado {
+static class Gerente extends Empleado {
     String departamento;
 
     public Gerente(String nombre, int id, String departamento) {
@@ -30,10 +28,8 @@ class Gerente extends Empleado {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Gerente)) return false;
+        if (!(o instanceof Gerente gerente)) return false;
         if (!super.equals(o)) return false; // Verifica id del padre
-
-        Gerente gerente = (Gerente) o;
         // Comparar Strings con equals(), no con ==
         return departamento.equals(gerente.departamento);
     }
@@ -41,7 +37,7 @@ class Gerente extends Empleado {
     // ❌ Sin hashCode() por ahora
 }
 
-class Director extends Gerente {
+static class Director extends Gerente {
     double presupuesto;
 
     public Director(String nombre, int id, String departamento, double presupuesto) {
@@ -52,10 +48,9 @@ class Director extends Gerente {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Director)) return false;
+        if (!(o instanceof Director director)) return false;
         if (!super.equals(o)) return false; // Verifica id y departamento
 
-        Director director = (Director) o;
         return presupuesto == director.presupuesto;
     }
 

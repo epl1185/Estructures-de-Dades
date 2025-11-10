@@ -5,7 +5,7 @@
  * Resultado: [A, 1, B, 2, C, 3, D]
  * Si list2 tiene más elementos, los ignora
  */
-public static <T> void intercalarListas(List<String> list1, List<Integer> list2) {
+public static void intercalarListas(List<String> list1, List<Integer> list2) {
     ListIterator <String> iter1 = list1.listIterator();
     Iterator <Integer> iter2 = list2.iterator();
     int i = 0;
